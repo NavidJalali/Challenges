@@ -11,25 +11,25 @@ Implement a function to find the first bad version. You should minimize the numb
 */
 
 public class FirstBadVersion {
-	public int firstBadVersion(int n) {
-		int first = 1;
-		int last = n;
-		while (last >= first) {
-			int middle = first + (last - first) / 2;
-			if (isBadVersion(middle)) {
-				if (middle == 1 || !isBadVersion(middle - 1)) {
-					return middle;
-				} else {
-					last = middle - 1;
-				}
-			} else {
-				first = middle + 1;
-			}
-		}
-		return 1;
-	}
+  public int firstBadVersion(int n) {
+    int first = 1;
+    int last = n;
+    while (last >= first) {
+      int middle = first + (last - first) / 2;
+      if (isBadVersion(middle)) {
+        if (middle == 1 || !isBadVersion(middle - 1)) {
+          return middle;
+        } else {
+          last = middle - 1;
+        }
+      } else {
+        first = middle + 1;
+      }
+    }
+    return 1;
+  }
 
-	private boolean isBadVersion(int middle) {
-		throw new RuntimeException();
-	}
+  private boolean isBadVersion(int middle) {
+    throw new RuntimeException();
+  }
 }

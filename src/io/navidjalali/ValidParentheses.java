@@ -11,37 +11,37 @@ An input string is valid if:
 
 class ValidParentheses {
 
-	public char matching(char c) {
-		if (c == '{') return '}';
-		if (c == '(') return ')';
-		if (c == '[') return ']';
-		throw new IllegalArgumentException();
-	}
+  public char matching(char c) {
+    if (c == '{') return '}';
+    if (c == '(') return ')';
+    if (c == '[') return ']';
+    throw new IllegalArgumentException();
+  }
 
-	public boolean isOpening(char c) {
-		return (c == '{') || (c == '(') || (c == '[');
-	}
+  public boolean isOpening(char c) {
+    return (c == '{') || (c == '(') || (c == '[');
+  }
 
-	public boolean isClosing(char c) {
-		return (c == '}') || (c == ')') || (c == ']');
-	}
+  public boolean isClosing(char c) {
+    return (c == '}') || (c == ')') || (c == ']');
+  }
 
-	public boolean isValid(String s) {
-		Stack<Character> stack = new Stack<>();
+  public boolean isValid(String s) {
+    Stack<Character> stack = new Stack<>();
 
-		for (char c : s.toCharArray()) {
-			if (isOpening(c)) {
-				stack.push(matching(c));
-			} else if (isClosing(c)) {
-				if (stack.isEmpty()) return false;
-				char top = stack.pop();
-				if (top != c) return false;
-			} else {
-				throw new IllegalArgumentException();
-			}
-		}
+    for (char c : s.toCharArray()) {
+      if (isOpening(c)) {
+        stack.push(matching(c));
+      } else if (isClosing(c)) {
+        if (stack.isEmpty()) return false;
+        char top = stack.pop();
+        if (top != c) return false;
+      } else {
+        throw new IllegalArgumentException();
+      }
+    }
 
-		return stack.isEmpty();
-	}
+    return stack.isEmpty();
+  }
 }
 

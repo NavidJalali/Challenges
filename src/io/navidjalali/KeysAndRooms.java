@@ -23,26 +23,26 @@ We then visit room 3.
 Since we were able to visit every room, we return true.
 */
 class KeysAndRooms {
-	public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-		boolean[] visited = new boolean[rooms.size()];
-		visited[0] = true;
+  public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+    boolean[] visited = new boolean[rooms.size()];
+    visited[0] = true;
 
-		Stack<Integer> keys = new Stack<>();
-		keys.push(0);
+    Stack<Integer> keys = new Stack<>();
+    keys.push(0);
 
-		while (!keys.isEmpty()) {
-			int key = keys.pop();
-			for (int newKey : rooms.get(key)) {
-				if (!visited[newKey]) {
-					visited[newKey] = true;
-					keys.push(newKey);
-				}
-			}
-		}
+    while (!keys.isEmpty()) {
+      int key = keys.pop();
+      for (int newKey : rooms.get(key)) {
+        if (!visited[newKey]) {
+          visited[newKey] = true;
+          keys.push(newKey);
+        }
+      }
+    }
 
-		for (boolean i : visited) {
-			if (!i) return false;
-		}
-		return true;
-	}
+    for (boolean i : visited) {
+      if (!i) return false;
+    }
+    return true;
+  }
 }

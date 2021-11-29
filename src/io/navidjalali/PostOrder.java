@@ -24,18 +24,18 @@ Output: [5,6,3,2,4,1]
 */
 
 public class PostOrder {
-	public List<Integer> postorder(NAryTreeNode root) {
-		if (root == null) return new ArrayList<>();
-		List<Integer> result =
-			root
-				.children
-				.stream()
-				.map(node -> postorder(node))
-				.flatMap(Collection::stream)
-				.collect(Collectors.toList());
+  public List<Integer> postorder(NAryTreeNode root) {
+    if (root == null) return new ArrayList<>();
+    List<Integer> result =
+      root
+        .children
+        .stream()
+        .map(node -> postorder(node))
+        .flatMap(Collection::stream)
+        .collect(Collectors.toList());
 
-		result.add(root.val);
+    result.add(root.val);
 
-		return result;
-	}
+    return result;
+  }
 }

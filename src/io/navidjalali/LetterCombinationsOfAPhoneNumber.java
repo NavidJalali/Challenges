@@ -20,29 +20,29 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 */
 
 class LetterCombinationsOfAPhoneNumber {
-	public static List<List<String>> letters = List.of(
-		List.of("a", "b", "c"),
-		List.of("d", "e", "f"),
-		List.of("g", "h", "i"),
-		List.of("j", "k", "l"),
-		List.of("m", "n", "o"),
-		List.of("p", "q", "r", "s"),
-		List.of("t", "u", "v"),
-		List.of("w", "x", "y", "z")
-	);
+  public static List<List<String>> letters = List.of(
+    List.of("a", "b", "c"),
+    List.of("d", "e", "f"),
+    List.of("g", "h", "i"),
+    List.of("j", "k", "l"),
+    List.of("m", "n", "o"),
+    List.of("p", "q", "r", "s"),
+    List.of("t", "u", "v"),
+    List.of("w", "x", "y", "z")
+  );
 
-	public List<String> letterCombinations(String digits) {
-		return new StringBuilder(digits)
-			.reverse()
-			.codePoints()
-			.map(i -> i - '0' - 2)
-			.mapToObj(i -> letters.get(i))
-			.reduce((acc, next) ->
-				next
-					.stream()
-					.flatMap(c -> acc.stream().map(c::concat))
-					.collect(Collectors.toList())
-			)
-			.orElse(List.of());
-	}
+  public List<String> letterCombinations(String digits) {
+    return new StringBuilder(digits)
+      .reverse()
+      .codePoints()
+      .map(i -> i - '0' - 2)
+      .mapToObj(i -> letters.get(i))
+      .reduce((acc, next) ->
+        next
+          .stream()
+          .flatMap(c -> acc.stream().map(c::concat))
+          .collect(Collectors.toList())
+      )
+      .orElse(List.of());
+  }
 }

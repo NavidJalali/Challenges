@@ -14,20 +14,20 @@ Output: [1,3,5,2,4]
 */
 
 class OddEvenLinkedList {
-	public ListNode oddEvenList(ListNode head) {
-		if (head == null) return null;
+  public ListNode oddEvenList(ListNode head) {
+    if (head == null) return null;
 
-		ListNode odd = head;
-		ListNode even = head.next;
-		ListNode headOfEvens = even;
+    ListNode odd = head;
+    ListNode even = head.next;
+    ListNode headOfEvens = even;
 
-		while (even != null && even.next != null) {
-			odd.next = even.next;
-			odd = odd.next;
-			even.next = odd.next;
-			even = even.next;
-		}
-		odd.next = headOfEvens;
-		return head;
-	}
+    while (even != null && even.next != null) {
+      odd.next = even.next;
+      odd = odd.next;
+      even.next = odd.next;
+      even = even.next;
+    }
+    odd.next = headOfEvens;
+    return head;
+  }
 }

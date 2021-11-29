@@ -11,20 +11,20 @@ An array arr is non-increasing if arr[i-1] >= arr[i] for every 1 <= i < arr.leng
 
 class MaxDistanceBetweenPairOfValues {
 
-	public int maxDistance(int[] nums1, int[] nums2) {
-		int i = 0;
-		int j = 0;
-		int maxDist = 0;
+  public int maxDistance(int[] nums1, int[] nums2) {
+    int i = 0;
+    int j = 0;
+    int maxDist = 0;
 
-		while (i < nums1.length && j < nums2.length) {
-			if (nums1[i] <= nums2[j]) {
-				maxDist = Math.max(maxDist, j - i);
-				j++;
-			} else {
-				i++;
-				j = Math.max(i, j);
-			}
-		}
-		return maxDist;
-	}
+    while (i < nums1.length && j < nums2.length) {
+      if (nums1[i] <= nums2[j]) {
+        maxDist = Math.max(maxDist, j - i);
+        j++;
+      } else {
+        i++;
+        j = Math.max(i, j);
+      }
+    }
+    return maxDist;
+  }
 }
