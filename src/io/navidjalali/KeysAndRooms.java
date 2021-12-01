@@ -22,6 +22,7 @@ We then visit room 2 and pick up key 3.
 We then visit room 3.
 Since we were able to visit every room, we return true.
 */
+
 class KeysAndRooms {
   public boolean canVisitAllRooms(List<List<Integer>> rooms) {
     boolean[] visited = new boolean[rooms.size()];
