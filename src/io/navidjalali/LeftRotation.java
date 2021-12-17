@@ -18,14 +18,14 @@ Reverse the whole thing, then reverse one chunk, then reverse another chunk.
 public class LeftRotation {
 
   private static List<Integer> reverse(List<Integer> list, int startIndex, int endIndex) {
-    int length = list.size();
+    final int length = list.size();
 
     if (startIndex >= length || startIndex < 0 || endIndex >= length || endIndex < 0) {
       throw new IllegalArgumentException("Invalid bounds");
     }
 
     while (startIndex < endIndex) {
-      int temp = list.get(startIndex);
+      final int temp = list.get(startIndex);
       list.set(startIndex, list.get(endIndex));
       list.set(endIndex, temp);
 
@@ -37,8 +37,8 @@ public class LeftRotation {
   }
 
   public static List<Integer> rotLeft(List<Integer> a, int d) {
-    int length = a.size();
-    int r = d % length;
+    final int length = a.size();
+    final int r = d % length;
 
     if (r == 0) return a;
 
