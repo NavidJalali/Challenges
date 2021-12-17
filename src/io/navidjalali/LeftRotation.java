@@ -9,6 +9,10 @@ Note that the lowest index item moves to the highest index in a rotation. This i
 
 Given an array a of n integers and a number, d, perform d left rotations on the array.
 Return the updated array to be printed as a single line of space-separated integers.
+
+Approach:
+O(1) space. O(n) time.
+Reverse the whole thing, then reverse one chunk, then reverse another chunk.
 */
 
 public class LeftRotation {
