@@ -20,7 +20,7 @@ Queries are interpreted as follows:
 Add the values of k between the indices a and b inclusive:
 index->	 1    2   3   4   5   6   7   8   9   10
       	[0,   0,  0,  0,  0,  0,  0,  0,  0,  0]
-	      [3,   3,  3,  3,  3,  0,  0,  0,  0,  0]
+        [3,   3,  3,  3,  3,  0,  0,  0,  0,  0]
       	[3,   3,  3,  10, 10, 7,  7,  7,  0,  0]
       	[3,   3,  3,  10, 10, 8,  8,  8,  1,  0]
 
