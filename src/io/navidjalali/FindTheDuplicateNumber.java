@@ -15,8 +15,8 @@ slow pointer from the head and move both pointers at the same pace. They will me
 Proof:
  <---- m ----> <--------- k
  a - b - c - d - e - f   |
-            |        |  |
-            i - h - [g] <------ Where the slow and fast pointer meet.
+             |       |   |
+             i - h -[g] <------ Where the slow and fast pointer meet.
   Cycle is n long.
 
 Distance travelled by fast pointer => df = m + C1 * n + k
