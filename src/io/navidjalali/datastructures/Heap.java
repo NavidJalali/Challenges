@@ -1,4 +1,4 @@
-package io.navidjalali;
+package io.navidjalali.datastructures;
 
 import java.util.*;
 
